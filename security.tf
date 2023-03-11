@@ -1,4 +1,4 @@
-esource "aws_security_group" "sg1" {
+resource "aws_security_group" "sg1" {
   name        = "sg1"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.vpc.id
