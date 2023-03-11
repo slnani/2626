@@ -1,14 +1,14 @@
-resource "aws_security_group" "sg1" {
-  name        = "sg1"
+resource "aws_security_group" "laksg1" {
+  name        = "laksg1"
   description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.vpc.id
+  vpc_id      = aws_vpc.lakvpc.id
 
   ingress {
     description      = "TLS from VPC"
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.vpc.cidr_block]
+    cidr_blocks      = [aws_vpc.lakvpc.cidr_block]
 
   }
 
@@ -21,6 +21,6 @@ resource "aws_security_group" "sg1" {
   }
 
   tags = {
-    Name ="sg1"
+    Name ="laksg1"
   }
 }
