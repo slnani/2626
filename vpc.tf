@@ -1,8 +1,8 @@
-resource "aws_vpc" "lak" {
+resource "aws_vpc" "lakvpc" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
     tags = {
-    Name = "lak"
+    Name = "lakvpc"
     Purpose = "jenkins"
   }
 }
